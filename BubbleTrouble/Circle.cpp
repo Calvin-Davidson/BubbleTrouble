@@ -5,15 +5,13 @@ Circle::Circle(Time& time)
 {
 	_time = (Time*)&time;
 
-	_position = sf::Vector2f(0, 0);
-	_velocity = sf::Vector2f(0,1);
-	float _radius = 25;
+	_velocity = sf::Vector2f(1.0f,1.0f);
+	float _radius = 25.0f;
 	
 	sf::CircleShape shape(_radius);
 	_shape = shape;
 
 	_shape.setOrigin(_radius, _radius);
-	_position.x += _radius * 2;
 }
 
 Circle::~Circle()
@@ -22,9 +20,9 @@ Circle::~Circle()
 
 void Circle::Update()
 {
-	_position.x += _velocity.x * _time->GetDeltaTime();
-	_position.y += _velocity.y * _time->GetDeltaTime();
-	_shape.setPosition(_position);
+	BorderCollision();
+	UpdateVelocity();
+	UpdatePosition();
 }
 
 void Circle::Draw(sf::RenderWindow& window)
@@ -36,6 +34,33 @@ void Circle::IsColliding(Circle* circle)
 {
 }
 
+float Circle::GetRadius()
+{
+	return _radius;
+}
+
 void Circle::ResolveCollision(Circle* cirlce1, Circle* circle2)
 {
+}
+
+void Circle::BorderCollision()
+{
+	if (_shape.getPosition().x <= _shape.getRadius())
+		_velocity.x = abs(_velocity.x);
+	if (_shape.getPosition().x >= 1366 - _shape.getRadius())
+		_velocity.x = -abs(_velocity.x);
+	if (_shape.getPosition().y <= _shape.getRadius())
+		_velocity.y = abs(_velocity.y);
+	if (_shape.getPosition().y >= (768 - _shape.getRadius()))
+		_velocity.y = -abs(_velocity.y);
+}
+
+void Circle::UpdateVelocity()
+{
+
+}
+
+void Circle::UpdatePosition()
+{
+	_shape.setPosition(_shape.getPosition().x + _velocity.x * _time->GetDeltaTime(), _shape.getPosition().y + _velocity.y * _time->GetDeltaTime());
 }

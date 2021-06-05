@@ -11,9 +11,13 @@ public:
 	void Update();
 	void Draw(sf::RenderWindow& window);
 	void IsColliding(Circle* circle);
+	float GetRadius();
 	static void ResolveCollision(Circle* cirlce1, Circle* circle2);
 private:
-	sf::Vector2f _position;
+	void BorderCollision();
+	void UpdateVelocity();
+	void UpdatePosition();
+
 	sf::Vector2f _velocity;
 	float _radius;
 	sf::CircleShape _shape;
