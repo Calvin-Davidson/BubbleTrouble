@@ -19,5 +19,5 @@ void Time::Restart()
 
 float Time::GetDeltaTime()
 {
-	return _deltatime.getElapsedTime().asMicroseconds() / 1000.0f;
+	return (float) _deltatime.getElapsedTime().asMicroseconds() / (float)1000.0f;
 }
