@@ -1,11 +1,14 @@
 #include <SFML/Graphics.hpp>
+#include "Circle.h";
+#include "Time.h";
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1366, 768), "Bubble trouble");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
+    Time time = Time();
+
+    Circle circle = Circle(time);
     while (window.isOpen())
     {
         sf::Event event;
@@ -16,8 +19,11 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
+        circle.Update();
+        circle.Draw(window);
         window.display();
+
+        time.Restart();
     }
 
     return 0;
