@@ -1,7 +1,7 @@
 #include "Circle.h"
 #include "Time.h"
 
-Circle::Circle(Time& time)
+Circle::Circle(Time& time, sf::Vector2f startPosition)
 {
 	_time = (Time*)&time;
 
@@ -12,8 +12,8 @@ Circle::Circle(Time& time)
 	
 	sf::CircleShape shape(_radius);
 	_shape = shape;
-
 	_shape.setOrigin(_radius, _radius);
+	_shape.setPosition(startPosition);
 }
 
 Circle::~Circle()

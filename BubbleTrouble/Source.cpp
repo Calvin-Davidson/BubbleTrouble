@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Circle.h";
 #include "Time.h";
+#include <iostream>
 
 int main()
 {
@@ -8,9 +9,11 @@ int main()
 
     Time time = Time();
 
-    Circle circle = Circle(time);
+    Circle circle = Circle(time, sf::Vector2f(200, 100));
+   
     while (window.isOpen())
     {
+   
         sf::Event event;
         while (window.pollEvent(event))
         {
