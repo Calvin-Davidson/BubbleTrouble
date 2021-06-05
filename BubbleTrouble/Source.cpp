@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Circle.h";
+#include "Player.h"
 #include "Time.h";
 
 int main()
@@ -9,6 +10,9 @@ int main()
     Time time = Time();
 
     Circle circle = Circle(time);
+    Player player = Player(time, sf::Vector2f(50, 50), sf::Vector2f(window.getSize().x/2, window.getSize().y - 25));
+
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -21,6 +25,10 @@ int main()
         window.clear();
         circle.Update();
         circle.Draw(window);
+
+        player.Update();
+        player.Draw(window);
+
         window.display();
 
         time.Restart();
