@@ -18,12 +18,6 @@ Player::~Player()
 
 void Player::Update()
 {
-//	if (_shape.getPosition().x <= _shape.getRadius())
-//		_velocity.x = abs(_velocity.x);
-//	if (_shape.getPosition().x >= 1366 - _shape.getRadius())
-//		_velocity.x = -abs(_velocity.x);
-
-
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && _shape.getPosition().x - 2 * _time->GetDeltaTime() >= _shape.getSize().x / 2) {
 		_shape.setPosition(_shape.getPosition().x - 2 * _time->GetDeltaTime(), _shape.getPosition().y);
 	}
