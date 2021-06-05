@@ -18,7 +18,9 @@ private:
 	void UpdateVelocity();
 	void UpdatePosition();
 
+	bool _falling;
 	sf::Vector2f _velocity;
+	sf::Vector2f _startVelocity;
 	float _radius;
 	sf::CircleShape _shape;
 	Time* _time;

@@ -5,7 +5,9 @@ Circle::Circle(Time& time)
 {
 	_time = (Time*)&time;
 
-	_velocity = sf::Vector2f(1.0f,1.0f);
+	_velocity = sf::Vector2f(2.0f,1.0f);
+	_startVelocity = _velocity;
+
 	float _radius = 25.0f;
 	
 	sf::CircleShape shape(_radius);
@@ -51,13 +53,13 @@ void Circle::BorderCollision()
 		_velocity.x = -abs(_velocity.x);
 	if (_shape.getPosition().y <= _shape.getRadius())
 		_velocity.y = abs(_velocity.y);
-	if (_shape.getPosition().y >= (768 - _shape.getRadius()))
+	if (_shape.getPosition().y >= (768 - _shape.getRadius())) 
 		_velocity.y = -abs(_velocity.y);
 }
 
 void Circle::UpdateVelocity()
 {
-
+		_velocity.y += 0.2 * _time->GetDeltaTime();
 }
 
 void Circle::UpdatePosition()
