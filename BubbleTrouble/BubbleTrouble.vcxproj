@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1f33048a-40e3-45e7-99a9-565c04a9f6c6}</ProjectGuid>
+    <ProjectGuid>{90084316-5417-4741-8b16-435522d4b2f7}</ProjectGuid>
     <RootNamespace>BubbleTrouble</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
