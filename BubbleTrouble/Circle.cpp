@@ -49,6 +49,8 @@ bool Circle::CollidesWithRope(PlayerRope* rope)
 {
 	if (_shape.getPosition().x + _shape.getRadius() < rope->GetPosition().x) return false;
 	if (_shape.getPosition().x - _shape.getRadius() > rope->GetPosition().x) return false;
+
+	if (_shape.getPosition().y + _shape.getRadius() > rope->GetPosition().y) return false;
 	return true;
 }
 
