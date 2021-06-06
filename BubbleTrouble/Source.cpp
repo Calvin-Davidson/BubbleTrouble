@@ -8,9 +8,21 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1366, 768), "Bubble trouble", sf::Style::Titlebar | sf::Style::Close);
 
     Time time = Time();
-
     Circle circle = Circle(time, sf::Vector2f(200, 100));
    
+    sf::Font font;
+    if (!font.loadFromFile("waltographUI.ttf"))
+    {
+        std::cout << "error";
+    }
+
+    sf::Text text;
+    text.setString("Testing text system :D");
+    text.setFont(font);
+    text.setCharacterSize(50);
+    text.setFillColor(sf::Color::Green);
+    text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+
     while (window.isOpen())
     {
    

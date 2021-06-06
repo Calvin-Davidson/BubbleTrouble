@@ -153,6 +153,9 @@
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="waltographUI.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
