@@ -8,7 +8,7 @@ Circle::Circle(Time& time, sf::Vector2f startPosition)
 	_velocity = sf::Vector2f(2.0f,1.0f);
 	_startVelocity = _velocity;
 
-	float _radius = 25.0f;
+	float _radius = 100.0f;
 	
 	sf::CircleShape shape(_radius);
 	_shape = shape;
