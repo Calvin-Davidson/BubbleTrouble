@@ -1,19 +1,19 @@
 #include "Circle.h"
 #include "Time.h"
 
-Circle::Circle(Time& time)
+Circle::Circle(Time& time, sf::Vector2f startPosition)
 {
 	_time = (Time*)&time;
 
 	_velocity = sf::Vector2f(2.0f,1.0f);
 	_startVelocity = _velocity;
 
-	float _radius = 25.0f;
+	float _radius = 100.0f;
 	
 	sf::CircleShape shape(_radius);
 	_shape = shape;
-
 	_shape.setOrigin(_radius, _radius);
+	_shape.setPosition(startPosition);
 }
 
 Circle::~Circle()

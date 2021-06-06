@@ -6,7 +6,7 @@
 class Circle
 {
 public:
-	Circle(Time& time);
+	Circle(Time& time, sf::Vector2f);
 	~Circle();
 	void Update();
 	void Draw(sf::RenderWindow& window);

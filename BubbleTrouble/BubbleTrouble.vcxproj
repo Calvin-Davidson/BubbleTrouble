@@ -149,6 +149,7 @@
     <ClCompile Include="Mathf.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerRope.cpp" />
+    <ClCompile Include="GameLoader.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
@@ -157,7 +158,11 @@
     <ClInclude Include="Mathf.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerRope.h" />
+    <ClInclude Include="GameLoader.h" />
     <ClInclude Include="Time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="waltographUI.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
