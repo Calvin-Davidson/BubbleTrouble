@@ -18,6 +18,10 @@ int main()
     sf::Font font = GameLoader().LoadFont();
     sf::Text text = GameLoader().CreateDefaultText("GET READY!!", font, true);
 
+    sf::Texture background = GameLoader().LoadBackground();
+    sf::Sprite backgroundSprite(background);
+    backgroundSprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
+
 
     Player player = Player(time, sf::Vector2f(50, 50), sf::Vector2f(window.getSize().x/2, window.getSize().y - 25));
 
@@ -31,6 +35,7 @@ int main()
         }
 
         window.clear();
+        window.draw(backgroundSprite);
 
         if (time.GetTotalGameTime() < 2000) {
             circle.Draw(window);

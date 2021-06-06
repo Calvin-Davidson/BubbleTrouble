@@ -12,8 +12,7 @@ PlayerRope::~PlayerRope()
 void PlayerRope::Update()
 {
 	_scale += _time->GetDeltaTime() / 60.0f;
-	std::cout << _time->GetDeltaTime() << "   " << _scale << "\n";
-
+	
 	if (_scale >= 1)
 		isDone = true;
 	else
@@ -35,7 +34,6 @@ void PlayerRope::Draw(sf::RenderWindow& window)
 void PlayerRope::MoveTo(sf::Vector2f newPosition)
 {
 	_scale = 0.0f;
-	std::cout << "yes";
 	_position = newPosition;
 }
 
