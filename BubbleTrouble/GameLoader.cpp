@@ -30,3 +30,12 @@ sf::Text GameLoader::CreateDefaultText(std::string defaultText, sf::Font& font, 
     return text;
 }
 
+sf::Texture GameLoader::LoadBackground()
+{
+    sf::Texture t;
+    t.loadFromFile("C:/Users/Calvin/source/repos/BubbleTrouble/BubbleTrouble/Images/Background.png");
+    t.setRepeated(true);
+    return (t);
+}
+
+
