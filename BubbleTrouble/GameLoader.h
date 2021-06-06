@@ -7,7 +7,6 @@ class GameLoader
 public:
 	static sf::Font LoadFont();
 	static sf::Text CreateDefaultText(std::string defaultText, sf::Font& font, bool centered = false);
-	static sf::Texture LoadBackground();
 private:
 };
 

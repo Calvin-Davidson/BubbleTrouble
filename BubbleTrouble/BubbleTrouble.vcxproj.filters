@@ -31,7 +31,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Mathf.cpp">
-    <ClCompile Include="GameLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,7 +48,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Mathf.h">
-    <ClInclude Include="GameLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -57,10 +55,5 @@
     <Font Include="waltographUI.ttf">
       <Filter>Resource Files</Filter>
     </Font>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Images\Background.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>
