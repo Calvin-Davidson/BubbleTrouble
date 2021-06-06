@@ -30,8 +30,9 @@ int main()
                 window.close();
         }
 
+        window.clear();
+
         if (time.GetTotalGameTime() < 2000) {
-            window.clear();
             circle.Draw(window);
             window.draw(text);
             player.Draw(window);
@@ -42,8 +43,9 @@ int main()
             continue;
         }
         if (time.GetTotalGameTime() < 7000) {
-            window.clear();
+
             circle.Draw(window);
+            player.Draw(window);
             
             int counter = (7000 - time.GetTotalGameTime()) / 1000 + 1;
             text.setString(std::to_string(counter));
@@ -59,7 +61,6 @@ int main()
             continue;
         }
 
-        window.clear();
         circle.Update();
         circle.Draw(window);
 
