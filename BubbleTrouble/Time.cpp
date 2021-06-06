@@ -9,7 +9,6 @@ Time::Time()
 
 Time::~Time()
 {
-
 }
 
 void Time::Restart()
@@ -20,7 +19,7 @@ void Time::Restart()
 
 float Time::GetDeltaTime()
 {
-	return (float) _deltatime.getElapsedTime().asMicroseconds() / (float)1000.0f;
+	return (float)_deltatime.getElapsedTime().asMicroseconds() / (float)1000.0f;
 }
 
 float Time::GetTotalGameTime()

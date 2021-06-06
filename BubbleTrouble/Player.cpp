@@ -9,7 +9,7 @@ Player::Player(Time& time, sf::Vector2f size, sf::Vector2f position)
 
 	playerRope = new PlayerRope(time);
 
-	_shape.setOrigin(size.x/2, size.y/2);
+	_shape.setOrigin(size.x / 2, size.y / 2);
 	_shape.setPosition(position);
 }
 

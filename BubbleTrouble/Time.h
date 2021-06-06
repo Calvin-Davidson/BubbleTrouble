@@ -15,4 +15,3 @@ private:
 	sf::Clock _deltatime;
 	float _totalGameTime = 0.0f;
 };
-

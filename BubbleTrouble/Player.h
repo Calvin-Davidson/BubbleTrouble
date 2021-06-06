@@ -18,4 +18,3 @@ private:
 	Time* _time;
 	float _movemoventSpeed = 0.7f;
 };
-

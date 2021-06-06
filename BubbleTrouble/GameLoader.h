@@ -10,4 +10,3 @@ public:
 	static sf::Texture LoadBackground();
 private:
 };
-
