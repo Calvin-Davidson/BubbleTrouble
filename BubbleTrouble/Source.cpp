@@ -34,6 +34,8 @@ int main()
             window.clear();
             circle.Draw(window);
             window.draw(text);
+            player.Draw(window);
+
             window.display();
 
             time.Restart();
