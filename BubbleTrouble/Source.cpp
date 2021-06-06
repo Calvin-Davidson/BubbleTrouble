@@ -16,7 +16,10 @@ int main()
 
     sf::Font font = GameLoader().LoadFont();
     sf::Text text = GameLoader().CreateDefaultText("GET READY!!", font, true);
-
+    sf::Texture background = GameLoader().LoadBackground();
+    sf::Sprite backgroundSprite(background);
+    backgroundSprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
+    
     while (window.isOpen())
     {
         sf::Event event;
@@ -26,8 +29,11 @@ int main()
                 window.close();
         }
 
+
         if (time.GetTotalGameTime() < 2000) {
             window.clear();
+            window.draw(backgroundSprite);
+
             circle.Draw(window);
             window.draw(text);
             window.display();
@@ -37,6 +43,8 @@ int main()
         }
         if (time.GetTotalGameTime() < 7000) {
             window.clear();
+            window.draw(backgroundSprite);
+
             circle.Draw(window);
             
             int counter = (7000 - time.GetTotalGameTime()) / 1000 + 1;
@@ -54,6 +62,8 @@ int main()
         }
 
         window.clear();
+        window.draw(backgroundSprite);
+
         circle.Update();
         circle.Draw(window);
         window.display();
