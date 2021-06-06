@@ -15,11 +15,12 @@ public:
 	void Draw(sf::RenderWindow& window);
 	void MoveTo(sf::Vector2f newPosition);
 	bool isDone = true;
-
+	float GetScale();
+	sf::Vector2f GetPosition();
 private:
 	Time* _time;
 	sf::Vector2f _position = sf::Vector2f(-100, 100);
-	float _scale = 0.0f;
+	float _scale = 1.0f;
 	float const _growSpeed = 4.0f;
 };
 

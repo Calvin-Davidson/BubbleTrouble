@@ -11,7 +11,7 @@ PlayerRope::~PlayerRope()
 
 void PlayerRope::Update()
 {
-	_scale += _time->GetDeltaTime() / 100.0f;
+	_scale += _time->GetDeltaTime() / 60.0f;
 	std::cout << _time->GetDeltaTime() << "   " << _scale << "\n";
 
 	if (_scale >= 1)
@@ -37,4 +37,14 @@ void PlayerRope::MoveTo(sf::Vector2f newPosition)
 	_scale = 0.0f;
 	std::cout << "yes";
 	_position = newPosition;
+}
+
+float PlayerRope::GetScale()
+{
+	return _scale;
+}
+
+sf::Vector2f PlayerRope::GetPosition()
+{
+	return _position;
 }

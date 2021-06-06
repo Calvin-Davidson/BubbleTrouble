@@ -12,10 +12,10 @@ public:
 
 	void Update();
 	void Draw(sf::RenderWindow& renderWindow);
+	PlayerRope* playerRope;
 private:
 	sf::RectangleShape _shape;
 	Time* _time;
-	PlayerRope* _playerRope;
 	float _movemoventSpeed = 0.7f;
 };
 
