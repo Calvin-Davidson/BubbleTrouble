@@ -21,7 +21,7 @@ void PlayerRope::Update()
 
 void PlayerRope::Draw(sf::RenderWindow& window)
 {
-	if (isDone && _scale > 1.25) return;
+	if (isDone && _scale > 1) return;
 	sf::Vertex line[] =
 	{
 		sf::Vertex(sf::Vector2f(_position.x, 768)),

@@ -13,7 +13,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(1366, 768), "Bubble trouble", sf::Style::Titlebar | sf::Style::Close);
 
 	Time time = Time();
-	Circle circle = Circle(time, sf::Vector2f(200, 100));
+	Circle circle = Circle(time, sf::Vector2f(200, 300));
 	balls->push_back(circle);
 
 	sf::Font font = GameLoader().LoadFont();

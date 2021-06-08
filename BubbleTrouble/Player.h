@@ -16,5 +16,5 @@ public:
 private:
 	sf::RectangleShape _shape;
 	Time* _time;
-	float _movemoventSpeed = 0.7f;
+	float _movemoventSpeed = 1.5f;
 };

@@ -5,7 +5,7 @@ Circle::Circle(Time& time, sf::Vector2f startPosition, float radius)
 {
 	_time = (Time*)&time;
 
-	_velocity = sf::Vector2f(2.0f, 1.0f);
+	_velocity = sf::Vector2f(1.0f, 0.4f);
 	_startVelocity = _velocity;
 
 	float _radius = radius;
@@ -59,10 +59,10 @@ void Circle::SplitBall(std::vector<Circle>* circles)
 	if (_shape.getRadius() < 25.0f) return;
 
 	Circle circleA = Circle(*_time, sf::Vector2f(_shape.getPosition().x - _shape.getRadius(), _shape.getPosition().y), _shape.getRadius()/2);
-	circleA._velocity = sf::Vector2f(-2.0f, -1.0f);
+	circleA._velocity = sf::Vector2f(-1.0f, this->_velocity.y);
 
 	Circle circleB = Circle(*_time, sf::Vector2f(_shape.getPosition().x + _shape.getRadius(), _shape.getPosition().y), _shape.getRadius()/2);
-	circleB._velocity = sf::Vector2f(2.0f, -1.0f);
+	circleB._velocity = sf::Vector2f(1.0f, this->_velocity.y);
 
 	circles->push_back(circleA);
 	circles->push_back(circleB);
@@ -82,7 +82,7 @@ void Circle::BorderCollision()
 
 void Circle::UpdateVelocity()
 {
-	_velocity.y += 0.2 * _time->GetDeltaTime();
+	_velocity.y += 0.05 * _time->GetDeltaTime();
 }
 
 void Circle::UpdatePosition()
