@@ -87,7 +87,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Programmas\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -146,6 +146,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="GameEvents.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Mathf.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerRope.cpp" />
@@ -155,6 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="GameEvents.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Mathf.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerRope.h" />

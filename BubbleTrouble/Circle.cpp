@@ -27,7 +27,14 @@ void Circle::Update()
 	UpdatePosition();
 }
 
-void Circle::Draw(sf::RenderWindow& window)
+void Circle::HookEvents(GameEvents* events)
+{
+	__hook(&GameEvents::Update, events, &GameObject::Update);
+	__hook(&GameEvents::LateUpdate, events, &GameObject::LateUpdate);
+	__hook(&GameEvents::Render, events, &GameObject::Render);
+}
+
+void Circle::Render(sf::RenderWindow& window)
 {
 	window.draw(_shape);
 }

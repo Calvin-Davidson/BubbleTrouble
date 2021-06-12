@@ -5,15 +5,20 @@
 #include "GameLoader.h";
 #include <iostream>
 #include <vector>
+#include "GameObject.h";
+
 
 int main()
 {
+	GameEvents* gameEvents = new GameEvents();
 	std::vector<Circle>* balls = new std::vector<Circle>;
 
 	sf::RenderWindow window(sf::VideoMode(1366, 768), "Bubble trouble", sf::Style::Titlebar | sf::Style::Close);
 
 	Time time = Time();
 	Circle circle = Circle(time, sf::Vector2f(200, 300));
+	circle.HookEvents(gameEvents);
+
 	balls->push_back(circle);
 
 	sf::Font font = GameLoader().LoadFont();
@@ -24,6 +29,7 @@ int main()
 	backgroundSprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
 
 	Player player = Player(time, sf::Vector2f(50, 50), sf::Vector2f(window.getSize().x / 2, window.getSize().y - 25));
+	player.HookEvents(gameEvents);
 
 	while (window.isOpen())
 	{
@@ -38,10 +44,8 @@ int main()
 		window.draw(backgroundSprite);
 
 		if (time.GetTotalGameTime() < 2000) {
-			for (int i = 0; i < balls->size(); i++) balls->at(i).Draw(window);
-
+			
 			window.draw(text);
-			player.Draw(window);
 
 			window.display();
 
@@ -49,10 +53,6 @@ int main()
 			continue;
 		}
 		if (time.GetTotalGameTime() < 7000) {
-			for (int i = 0; i < balls->size(); i++)  balls->at(i).Draw(window);
-
-			player.Draw(window);
-
 			int counter = (7000 - time.GetTotalGameTime()) / 1000 + 1;
 			text.setString(std::to_string(counter));
 
@@ -67,14 +67,15 @@ int main()
 			continue;
 		}
 
-		circle.Update();
+		__raise gameEvents->Update();
+		__raise gameEvents->LateUpdate();
+		__raise gameEvents->Render(window);
+
 		bool collided = false;
 		for (int i = 0; i < balls->size(); i++) {
-			balls->at(i).Draw(window);
 			balls->at(i).Update();
 
 			if (!collided && !player.playerRope->isDone && balls->at(i).CollidesWithRope(player.playerRope)) {
-				std::cout << "yes";
 				collided = true;
 				player.playerRope->OnCollision();
 				
@@ -83,8 +84,8 @@ int main()
 			}
 		}
 
-		player.Update();
-		player.Draw(window);
+
+
 
 		window.display();
 

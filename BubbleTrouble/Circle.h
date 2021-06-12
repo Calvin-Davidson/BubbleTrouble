@@ -3,14 +3,16 @@
 #include <iostream>
 #include "Time.h"
 #include "Player.h"
+#include "GameObject.h";
 
-class Circle
+class Circle : GameObject
 {
 public:
 	Circle(Time& time, sf::Vector2f, float radius = 100.0f);
 	~Circle();
 	void Update();
-	void Draw(sf::RenderWindow& window);
+	void HookEvents(GameEvents* events);
+	void Render(sf::RenderWindow& window);
 	void IsColliding(Circle* circle);
 	float GetRadius();
 	static void ResolveCollision(Circle* cirlce1, Circle* circle2);

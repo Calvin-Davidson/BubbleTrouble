@@ -17,6 +17,13 @@ Player::~Player()
 {
 }
 
+void Player::HookEvents(GameEvents* events)
+{
+	__hook(&GameEvents::Update, events, &GameObject::Update);
+	__hook(&GameEvents::LateUpdate, events, &GameObject::LateUpdate);
+	__hook(&GameEvents::Render, events, &GameObject::Render);
+}
+
 void Player::Update()
 {
 	playerRope->Update();
@@ -34,7 +41,11 @@ void Player::Update()
 	}
 }
 
-void Player::Draw(sf::RenderWindow& renderWindow)
+void Player::LateUpdate()
+{
+}
+
+void Player::Render(sf::RenderWindow& renderWindow)
 {
 	renderWindow.draw(_shape);
 	playerRope->Draw(renderWindow);
